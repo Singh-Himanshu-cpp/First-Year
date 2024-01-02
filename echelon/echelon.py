@@ -1,5 +1,5 @@
 # first create matrix.txt
-def echlon(m):
+def echelon(m):
     num_pivots=0
     for j in range(len(m[0])):   # going column wise
         for i in range(num_pivots,len(m)):
@@ -17,7 +17,7 @@ def echlon(m):
                 for k in range(len(m[i])):      # removing aproximations made by float of python
                     if -0.00001<m[i][k]<0.00001:
                         m[i][k]=0
-    print("echlon form is"+str(m)+"\n")
+    print("echelon form is"+str(m)+"\n")
 def RREF(m):
     for j in range(len(m[0])):
         if (j+1) in pivotcolumns:
@@ -69,9 +69,9 @@ for l in f:
     row=[int(i) for i in l.split()]
     m.append(row)
 f.close()
-# convering to echlon
+# convering to echelon
 pivotcolumns=[]
-echlon(m)
+echelon(m)
 # convering to RREF
 RREF(m)
 # printing the homogenous solution
